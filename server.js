@@ -369,8 +369,8 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// 启动
-app.listen(PORT, () => {
+// 启动 - 监听所有网络接口
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📚 API: http://localhost:${PORT}/api`);
+  console.log(`📚 API: http://0.0.0.0:${PORT}/api`);
 });
